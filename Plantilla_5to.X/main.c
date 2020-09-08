@@ -58,10 +58,11 @@
 
 void main (void) 
 {
-    Kit_Init ();     // Inicializa los puertos
-    Tmr0_Init ();    // Inicializa el timer 0
-    ei ();           // Habilita las interrupciones globales
-    while (1)
+    TRISDbits.RD4 = 1;
+    TRISDbits.RD5 = ENTRADA; 
+    
+    TRISDbits.RD2 = SALIDA; 
+    LATDbits.LD2 = 0;
     {   
       Aplicacion ();
     }
